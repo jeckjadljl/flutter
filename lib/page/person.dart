@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter01page/inside/sign%20up.dart';
 import 'package:flutter01page/page/Column.dart';
 import 'package:flutter01page/page/VIP.dart';
 import 'package:flutter01page/page/head.dart';
@@ -20,9 +21,10 @@ class _PersonPageState extends State<PersonPage> {
         height: double.infinity,
         width: double.infinity,
         color: const Color.fromARGB(31, 190, 190, 190),
-        child: Column(
-          children: [
-             SizedBox(height: 50,),
+        child: Column(children: [
+          SizedBox(
+            height: 50,
+          ),
           Stack(
             children: [
               Row(
@@ -149,7 +151,10 @@ class _PersonPageState extends State<PersonPage> {
                         }),
                       );
                     },
-                    child: const Text("立即开通",style: TextStyle(fontSize: 13,color: Colors.black),),
+                    child: const Text(
+                      "立即开通",
+                      style: TextStyle(fontSize: 13, color: Colors.black),
+                    ),
                   ),
                 ),
               )
@@ -243,6 +248,36 @@ class _PersonPageState extends State<PersonPage> {
                     },
                   )),
             ],
+          ),
+          SizedBox(
+            height: 25,
+          ),
+          Container(
+            height: 30,
+            width: 130,
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  bottomRight: Radius.circular(30)),
+            ),
+            child: TextButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.orange),
+                  foregroundColor: MaterialStateProperty.all(Colors.black),
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (BuildContext context) {
+                      return const SignUp();
+                    }),
+                  );
+                },
+                child: Text(
+                  "登陆/注册",
+                  style: TextStyle(
+                    fontSize: 16,
+                  ),
+                )),
           )
         ]),
       ),
